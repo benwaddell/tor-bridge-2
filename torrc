@@ -1,0 +1,18 @@
+# /etc/tor/torrc
+
+Nickname Khruangbin
+Address btw1217.asuscomm.com
+
+DataDirectory /var/lib/tor
+RunAsDaemon 0
+BridgeRelay 1
+SocksPort 0
+
+ControlPort 9051
+CookieAuthentication 1
+
+ORPort 0.0.0.0:9999 IPv4Only
+ExtORPort auto
+
+ServerTransportListenAddr obfs4 0.0.0.0:443
+ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
