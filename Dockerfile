@@ -1,7 +1,10 @@
-# docker run -p 443:443 -p 9999:9999 -v /docker/tor-bridge/keys:/var/lib/tor/keys -d --restart always --name tor-bridge btw1217/tor-bridge
+# docker run -p 80:80 -p 443:443 -v /docker/tor-bridge/keys:/var/lib/tor/keys -d --restart always --name tor-bridge-2 btw1217/tor-bridge-2
 
 # ubuntu base image
 FROM ubuntu
+
+# ports used by tor
+EXPOSE 80 443
 
 # install tor repo dependencies
 RUN apt-get update \
@@ -25,6 +28,3 @@ USER debian-tor
 
 # run startup script
 ENTRYPOINT tor
-
-# ports used by tor
-EXPOSE 443 9999
