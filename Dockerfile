@@ -1,10 +1,10 @@
-# docker run -p 80:80 -p 443:443 -v /docker/tor-bridge/keys:/var/lib/tor/keys -d --restart always --name tor-bridge-2 btw1217/tor-bridge-2
+# docker run -p 80:80 -p 9080:9080 -v /docker/tor-bridge-2/keys:/var/lib/tor/keys -d --restart always --name tor-bridge-2 btw1217/tor-bridge-2
 
 # ubuntu base image
 FROM ubuntu
 
 # ports used by tor
-EXPOSE 80 443
+EXPOSE 80 9080
 
 # install tor repo dependencies
 RUN apt-get update \
