@@ -1,4 +1,4 @@
-# docker run -p 80:80 -p 9080:9080 -v tor-bridge2-keys:/var/lib/tor/keys -d --restart always --name tor-bridge-2 benwaddell/tor-bridge-2
+# docker run -p 80:80 -p 9080:9080 -v tor-bridge-2-keys:/var/lib/tor/keys -d --restart always --name tor-bridge-2 benwaddell/tor-bridge-2
 
 # ubuntu base image
 FROM ubuntu
@@ -16,7 +16,7 @@ RUN apt-get update \
 && echo 'deb-src [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org jammy main' \
 >> /etc/apt/sources.list.d/tor.list
 
-# install tor and obfs4proxy
+# install tor, obfs4proxy, and nyx
 RUN apt-get update \
 && apt-get install tor deb.torproject.org-keyring obfs4proxy nyx -y
 
