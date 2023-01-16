@@ -1,6 +1,6 @@
 # /etc/tor/torrc
 
-Nickname TameImpala
+Nickname KingGizzard
 
 DataDirectory /var/lib/tor
 RunAsDaemon 0
