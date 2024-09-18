@@ -23,12 +23,13 @@ RUN apt-get update \
 # copy config file
 COPY --chown=debian-tor:debian-tor torrc /etc/tor/
 
-# change to debian-tor
-USER debian-tor
-
 # set permissions on docker volume
 RUN mkdir -p /var/lib/tor/keys \
-&& chmod 2700 /var/lib/tor/keys
+&& chmod 2700 /var/lib/tor/keys \
+&& chown -R debian-tor:debian-tor /var/lib/tor
+
+# change to debian-tor
+USER debian-tor
 
 # run startup script
 ENTRYPOINT tor
