@@ -1,7 +1,7 @@
 # docker run -p 80:80 -p 9080:9080 -v tor-bridge-2-keys:/var/lib/tor/keys -d --pull always --restart always --name tor-bridge-2 benwaddell/tor-bridge-2
 
 # ubuntu base image
-FROM ubuntu
+FROM ubuntu:22.04
 
 # ports used by tor
 EXPOSE 80 9080
