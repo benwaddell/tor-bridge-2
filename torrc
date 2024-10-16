@@ -5,6 +5,7 @@ Nickname KingGizzard
 DataDirectory /var/lib/tor
 RunAsDaemon 0
 BridgeRelay 1
+BridgeDistribution any
 SocksPort 0
 
 ControlPort 9051
